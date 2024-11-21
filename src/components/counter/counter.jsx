@@ -1,15 +1,12 @@
-//counter-component for adding dish in cart
+//default counter-component
 
-import {useCount} from "./use-count";
-
-export const Counter = () => {
-    const { value, increase, decrease } = useCount({ min: 0, max: 5 });
+export const Counter = ({ value, increase, decrease }) => {
 
     return (
         <div>
-            <button onClick={increase}>+</button>
+            <button type='button' onClick={increase}>+</button>
             {value}
-            <button onClick={decrease}>-</button>
+            <button type='button' onClick={decrease}>-</button>
         </div>
     )
 };

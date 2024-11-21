@@ -1,10 +1,25 @@
 import { useForm } from "./use-form";
+import {Counter} from "../counter/counter";
 
 export const ReviewForm = () => {
 
     const { form, setName, setText, setRating, setResetForm } = useForm();
 
     const { name, text, rating } = form;
+
+    //for rating counter
+    const increase = () => {
+        if (rating < 5) {
+            setRating(rating + 1);
+        }
+    };
+
+    //for rating counter
+    const decrease = () => {
+        if (rating > 1) {
+            setRating(rating - 1);
+        }
+    };
 
     return (
         <form>
@@ -27,11 +42,12 @@ export const ReviewForm = () => {
             </div>
             <div>
                 <span>Rating</span>
-                <input
-                    type='text'
+                <Counter
+                    increase={(e) => increase(e)}
+                    decrease={(e) => decrease(e)}
                     value={rating}
-                    onChange={(event) => setRating(event.target.value)}
                 />
+
             </div>
             <button type='reset'
                     onClick={setResetForm}>Clear form</button>
