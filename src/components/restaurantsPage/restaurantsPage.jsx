@@ -32,6 +32,15 @@ export const RestaurantsPage = () => {
             {activeRestaurant && (
                 <Restaurant restaurant={activeRestaurant}/>
             )}
+            {activeRestaurant && (
+                <Restaurant restaurant={activeRestaurant}/>
+            )}
+            {activeRestaurant && (
+                <Restaurant restaurant={activeRestaurant}/>
+            )}
+            {activeRestaurant && (
+                <Restaurant restaurant={activeRestaurant}/>
+            )}
 
 
         </div>
