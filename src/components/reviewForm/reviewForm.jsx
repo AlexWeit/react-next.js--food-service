@@ -43,8 +43,8 @@ export const ReviewForm = () => {
             <div>
                 <span>Rating</span>
                 <Counter
-                    increase={(e) => increase(e)}
-                    decrease={(e) => decrease(e)}
+                    increase={increase}
+                    decrease={decrease}
                     value={rating}
                 />
 

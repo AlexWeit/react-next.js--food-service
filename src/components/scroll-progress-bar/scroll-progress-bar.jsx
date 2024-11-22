@@ -3,17 +3,23 @@ import { useEffect, useState } from "react";
 export const ScrollProgressBar = () => {
     const [progressBarWidth, setProgressBarWidth] = useState("0");
 
-    const scrollCallback = () => {
+    const getScrollPercent = () => {
         const scrollTop = document.documentElement.scrollTop; // px
         const windowHeight =
             document.documentElement.scrollHeight -
             document.documentElement.clientHeight;
         const scrolledPercent = scrollTop / windowHeight * 100 + "%";
 
-        setProgressBarWidth(scrolledPercent);
+        return (
+            scrolledPercent
+        )
     };
 
     useEffect(() => {
+        const scrollCallback = () => {
+            setProgressBarWidth(getScrollPercent);
+        };
+
         window.addEventListener("scroll", scrollCallback);
         return () => window.removeEventListener("scroll", scrollCallback);
     }, []);
