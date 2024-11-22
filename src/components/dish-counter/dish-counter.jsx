@@ -1,23 +1,10 @@
 //use counter-component for adding dish in cart
 
-import {Counter} from "../counter/counter";
-import { useState } from 'react';
+import { Counter } from "../counter/counter";
+import { useDishCount } from './use-dish-counter';
 
-export const DishCounter = ({ min, max }) => {
-    const [value, setValue] = useState(0);
-
-    // functions for click events
-    const increase = () => {
-        if (value < max) {
-            setValue(value + 1);
-        }
-    };
-
-    const decrease = () => {
-        if (value > min) {
-            setValue(value - 1);
-        }
-    };
+export const DishCounter = () => {
+    const { value, increase, decrease } = useDishCount({ min: 0, max: 5 });
 
     return <Counter value={value} increase={increase} decrease={decrease} />;
 };
