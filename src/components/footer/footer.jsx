@@ -2,10 +2,10 @@ import './footer.css'
 
 export const Footer = () => {
     return (
-        <div>
-            <div className={"footer"}>
+        <>
+            <footer className={"footer"}>
                 Footer
-            </div>
-        </div>
+            </footer>
+        </>
     );
 };

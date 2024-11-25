@@ -1,0 +1,94 @@
+/*basic reset styles*/
+html {
+    font-size: 16px;
+    height: 100%;
+}
+
+body {
+    display: flex;
+    flex-direction: column;
+    font-family: sans-serif;
+    font-size: 1rem;
+    margin: 0;
+    min-height: 100vh;
+    position: relative;
+}
+
+/*.wrapper {
+  display: flex;
+  flex-direction: column;
+  margin: 0;
+  min-height: 100vh;
+  padding-top: 100px;
+  position: relative;
+}*/
+
+/*for footer*/
+header {
+    flex: 0 0 auto;
+}
+
+main {
+    flex: 1 0 auto;
+}
+
+footer {
+    flex: 0 0 auto;
+}
+/**/
+
+ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+p {
+    margin: 0;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    font-weight: normal;
+    margin-bottom: 0;
+    margin-top: 0;
+}
+
+* {
+    box-sizing: border-box;
+}
+
+
+/*LINKS*/
+a {
+    color: inherit;
+}
+
+a,
+a:hover {
+    text-decoration: none;
+    transition: 0.3s;
+}
+
+a,
+a:hover,
+a:focus,
+a:active {
+    outline: none;
+}
+
+a {
+    color: #1d1d1d; /*rgb(29, 29, 29)*/
+}
+
+a:hover {
+    color: rgba(29, 29, 29, 0.8);
+}
+
+a:active {
+    color: rgba(29, 29, 29, 0.7);
+}

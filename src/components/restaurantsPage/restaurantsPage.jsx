@@ -17,7 +17,7 @@ export const RestaurantsPage = () => {
     };
 
     return (
-        <div>
+        <main>
             <h1>Restaurants</h1>
 
             {restaurantsData.map((restaurant) => (
@@ -43,6 +43,6 @@ export const RestaurantsPage = () => {
             )}
 
 
-        </div>
+        </main>
     )
 };
