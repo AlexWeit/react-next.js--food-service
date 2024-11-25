@@ -1,6 +1,6 @@
 import { useState } from 'react';
 
-export const useCount = ({ min, max }) => {
+export const useDishCount = ({ min, max }) => {
     const [value, setValue] = useState(0);
 
     // functions for click events
@@ -20,5 +20,5 @@ export const useCount = ({ min, max }) => {
         value,
         increase,
         decrease
-    }
+    };
 };
