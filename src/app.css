@@ -1,4 +1,17 @@
-/*basic reset styles*/
+/*basic reset styles and variables*/
+:root {
+    --black: #1d1d1d;
+    --white: #ffffff;
+    --orange: #e4661e;
+    --orange-light: #f0894e;
+    --pink: #fff0db;
+    --yellow: #f0ad4e;
+    --yellow-light: #ffd25d;
+    --grey: #e5e5e5;
+    --green: #49ab39;
+    --input-border: #c4c4c4;
+}
+
 html {
     font-size: 16px;
     height: 100%;
@@ -13,15 +26,6 @@ body {
     min-height: 100vh;
     position: relative;
 }
-
-/*.wrapper {
-  display: flex;
-  flex-direction: column;
-  margin: 0;
-  min-height: 100vh;
-  padding-top: 100px;
-  position: relative;
-}*/
 
 /*for footer*/
 header {
@@ -82,7 +86,7 @@ a:active {
 }
 
 a {
-    color: #1d1d1d; /*rgb(29, 29, 29)*/
+    color: var(--black); /*rgb(29, 29, 29)*/
 }
 
 a:hover {
@@ -91,4 +95,35 @@ a:hover {
 
 a:active {
     color: rgba(29, 29, 29, 0.7);
+}
+
+/* tabs */
+.tabsHeader {
+    padding: 0 24px;
+    background-color: var(--grey);
+}
+
+.tabsNav {
+    overflow-x: auto;
+    overflow-y: hidden;
+    white-space: nowrap;
+    text-align: center;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+}
+
+.tabsContent {
+    padding: 30px 0;
+}
+
+@media all and (max-width: 800px) {
+    .tabsContent {
+        padding: 18px 0;
+    }
+
+    .tabsNav {
+        justify-content: flex-start;
+    }
 }

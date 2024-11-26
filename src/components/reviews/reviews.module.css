@@ -1,0 +1,26 @@
+.reviewsWrap {
+    margin-top: 30px;
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.reviewsTitle {
+    font-size: 22px;
+    line-height: 28px;
+    font-weight: 600;
+}
+
+.reviewsList {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.reviewsItem {
+    border: 1px solid var(--grey);
+    padding: 20px 26px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}

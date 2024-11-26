@@ -1,10 +1,10 @@
-import './header.css'
+import styles from "./header.module.css";
 
 export const Header = () => {
     return (
         <>
-            <header className={"header"}>
-                <a href="#" className={"header__logo"}>Food delivery App</a>
+            <header className={styles.header}>
+                <a href="#" className={styles.headerLogo}>Food delivery App</a>
             </header>
         </>
     );

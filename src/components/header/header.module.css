@@ -3,13 +3,13 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    background: #1d1d1d;
-    color: #fff;
+    background: var(--black);
+    color: var(--white);
 }
 
-.header__logo {
+.headerLogo {
     text-decoration: none;
-    color: #fff;
+    color: var(--white);
     font-size: 20px;
     font-weight: bold;
 }

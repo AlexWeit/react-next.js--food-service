@@ -1,0 +1,19 @@
+.menuTitle {
+    padding-bottom: 15px;
+    font-size: 22px;
+    line-height: 28px;
+    font-weight: 600;
+}
+
+.menuList {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.menuItem {
+    border: 1px solid var(--grey);
+    padding: 20px 26px;
+    display: flex;
+    justify-content: space-between;
+}

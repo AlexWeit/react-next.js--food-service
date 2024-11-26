@@ -1,0 +1,36 @@
+.tab {
+    display: inline-flex;
+    margin: 0 0 0 24px;
+    padding: 12px 0;
+    font-size: 16px;
+    line-height: 1.5;
+    font-weight: 400;
+    outline: none;
+    box-shadow: none;
+    border: none;
+    background-color: transparent;
+    transition: 0.3s all;
+    vertical-align: top;
+    cursor: pointer;
+    position: relative;
+    opacity: 0.8;
+    text-transform: none;
+}
+
+.tab:first-child {
+    margin: 0;
+}
+
+.tab.tabSelected {
+    opacity: 1;
+}
+
+.tabSelected:after {
+    content: "";
+    position: absolute;
+    top: calc(100% - 3px);
+    left: 0;
+    right: 0;
+    height: 3px;
+    background-color: var(--black);
+}

@@ -1,5 +1,7 @@
 import { useForm } from "./use-form";
 import {Counter} from "../counter/counter";
+import classNames from "classnames";
+import styles from "./reviewForm.module.css";
 
 export const ReviewForm = () => {
 
@@ -22,35 +24,41 @@ export const ReviewForm = () => {
     };
 
     return (
-        <form>
-            <div>
-                <span>Name</span>
-                <input
-                    type='text'
-                    value={name}
-                    onChange={(event) => setName(event.target.value)}
-                />
-            </div>
+        <div className={styles.reviewFormWrap}>
+            <h4 className={styles.reviewFormTitle}>Leave your review</h4>
+            <form className={styles.reviewForm}>
+                <div className={styles.reviewFormItem}>
+                    <span className={styles.reviewFormLabel}>Name</span>
+                    <input
+                        className={styles.reviewFormInput}
+                        type='text'
+                        value={name}
+                        onChange={(event) => setName(event.target.value)}
+                    />
+                </div>
 
-            <div>
-                <span>Text</span>
-                <input
-                    type='text'
-                    value={text}
-                    onChange={(event) => setText(event.target.value)}
-                />
-            </div>
-            <div>
-                <span>Rating</span>
-                <Counter
-                    increase={increase}
-                    decrease={decrease}
-                    value={rating}
-                />
+                <div className={styles.reviewFormItem}>
+                    <span className={styles.reviewFormLabel}>Text</span>
+                    <textarea
+                        className={classNames(styles.reviewFormInput, styles.reviewFormTextarea)}
+                        value={text}
+                        onChange={(event) => setText(event.target.value)}
+                    />
+                </div>
+                <div className={styles.reviewFormItem}>
+                    <span  className={styles.reviewFormLabel}>Rating</span>
+                    <Counter
+                        increase={increase}
+                        decrease={decrease}
+                        value={rating}
+                    />
 
-            </div>
-            <button type='reset'
+                </div>
+                <button
+                    className={styles.reviewFormButton}
+                    type='reset'
                     onClick={setResetForm}>Clear form</button>
-        </form>
+            </form>
+        </div>
     );
 };
