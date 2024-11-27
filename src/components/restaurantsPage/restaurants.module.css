@@ -33,3 +33,19 @@
     font-weight: 700;
     margin: 0 0 6px;
 }
+
+.restaurantsTabsHeader {
+    padding: 0 24px;
+    background-color: var(--grey);
+}
+
+.restaurantsTabsContent {
+    padding: 30px 0;
+}
+
+
+@media all and (max-width: 800px) {
+    .restaurantsTabsContent {
+        padding: 18px 0;
+    }
+}

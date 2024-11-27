@@ -1,4 +1,5 @@
 import { restaurantsData } from "../../mock-data/restaurants";
+import { TabsNav } from "../tabsNav/tabsNav";
 import { TabButton } from "../tabButton/tabButton";
 import { Restaurant } from "../restaurant/restaurant";
 import { Container } from "../container/container";
@@ -29,10 +30,10 @@ export const RestaurantsPage = () => {
                 </div>
             </div>
 
-            <div className="contentTabs">
-                <div className="tabsHeader">
+            <div className={styles.restaurantsTabs}>
+                <div className={styles.restaurantsTabsHeader}>
                     <Container>
-                        <div className="tabsNav">
+                        <TabsNav>
                             {restaurantsData.map((restaurant) => (
                                 <TabButton
                                     title={restaurant.name}
@@ -41,11 +42,11 @@ export const RestaurantsPage = () => {
                                     isActive={restaurant.id === activeRestaurantId}
                                 />
                             ))}
-                        </div>
+                        </TabsNav>
                     </Container>
                 </div>
 
-                <div className="tabsContent">
+                <div className={styles.restaurantsTabsContent}>
                     <Container>
                         {activeRestaurant && (
                             <Restaurant restaurant={activeRestaurant}/>
@@ -53,19 +54,6 @@ export const RestaurantsPage = () => {
                     </Container>
                 </div>
             </div>
-
-
-            {/*{activeRestaurant && (*/}
-            {/*    <Restaurant restaurant={activeRestaurant}/>*/}
-            {/*)}*/}
-            {/*{activeRestaurant && (*/}
-            {/*    <Restaurant restaurant={activeRestaurant}/>*/}
-            {/*)}*/}
-            {/*{activeRestaurant && (*/}
-            {/*    <Restaurant restaurant={activeRestaurant}/>*/}
-            {/*)}*/}
-
-
         </main>
     )
 };

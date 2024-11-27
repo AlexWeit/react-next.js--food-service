@@ -5,10 +5,10 @@ export const Counter = ({ value, increase, decrease }) => {
 
     return (
         <div className={styles.counterWrap}>
-            <div className={styles.counterValue}>{value}</div>
-            <div className={styles.counterBtns}>
-                <button className={styles.counterBtn} type='button' onClick={increase}>+</button>
-                <button className={styles.counterBtn} type='button' onClick={decrease}>-</button>
+            <div className={styles.value}>{value}</div>
+            <div className={styles.buttons}>
+                <button className={styles.button} type='button' onClick={increase}>+</button>
+                <button className={styles.button} type='button' onClick={decrease}>-</button>
             </div>
         </div>
     )

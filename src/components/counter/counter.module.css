@@ -6,19 +6,19 @@
     align-items: center;
 }
 
-.counterValue {
+.value {
     color: #898989;
     font-weight: 600;
     font-size: 18px;
     line-height: 28px;
 }
 
-.counterBtns {
+.buttons {
     display: flex;
     gap: 2px;
 }
 
-.counterBtn {
+.button {
     color: var(--white);
     background-color: var(--yellow);
     border: 1px solid var(--yellow);
