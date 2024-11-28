@@ -1,6 +1,7 @@
 import { Menu } from "../menu/menu";
 import { Reviews } from "../reviews/reviews";
 import {ReviewForm} from "../reviewForm/reviewForm";
+import styles from "./restaurant.module.css";
 
 export const Restaurant = ({ restaurant }) => {
     const { name, menu, reviews } = restaurant;
@@ -10,8 +11,8 @@ export const Restaurant = ({ restaurant }) => {
     }
 
     return (
-        <div>
-            <h2>{name}</h2>
+        <div className={styles.restaurantWrap}>
+            <h2 className={styles.restaurantTitle}>{name}</h2>
             {Boolean(menu.length) && <Menu menuItems={menu} />}
             {Boolean(reviews.length) && <Reviews reviewItems={reviews} />}
             <ReviewForm />
