@@ -1,6 +1,10 @@
 import styles from "./reviewItem.module.css"
+import classNames from "classnames";
+import {useTheme} from "../theme-context/use-theme";
 
 export const ReviewItem = ({ reviewItem }) => {
+    const { theme } = useTheme();
+
     return (
         <>
             <div className={styles.reviewItemLeft}>
@@ -8,7 +12,10 @@ export const ReviewItem = ({ reviewItem }) => {
                 <div className={styles.reviewItemUser}>{reviewItem.user}</div>
             </div>
             <div className={styles.reviewItemRight}>
-                <div className={styles.reviewItemRating}>{`${reviewItem.rating} ★`}</div>
+                <div className={classNames(styles.reviewItemRating, {
+                    [styles.light]: theme === "light",
+                    [styles.dark]: theme === "dark",
+                })}>{`${reviewItem.rating} ★`}</div>
             </div>
 
         </>

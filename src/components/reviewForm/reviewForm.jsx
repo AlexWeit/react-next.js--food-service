@@ -2,8 +2,10 @@ import { useForm } from "./use-form";
 import {Counter} from "../counter/counter";
 import classNames from "classnames";
 import styles from "./reviewForm.module.css";
+import {useTheme} from "../theme-context/use-theme";
 
 export const ReviewForm = () => {
+    const { theme } = useTheme();
 
     const { form, setName, setText, setRating, setResetForm } = useForm();
 
@@ -55,7 +57,10 @@ export const ReviewForm = () => {
 
                 </div>
                 <button
-                    className={styles.reviewFormButton}
+                    className={classNames(styles.reviewFormButton, {
+                        [styles.light]: theme === "light",
+                        [styles.dark]: theme === "dark",
+                    })}
                     type='reset'
                     onClick={setResetForm}>Clear form</button>
             </form>

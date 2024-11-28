@@ -16,3 +16,11 @@
     font-weight: 600;
     color: var(--yellow);
 }
+
+.reviewItemRating.light {
+    color: var(--lightThemeMainColor);
+}
+
+.reviewItemRating.dark {
+    color: var(--darkThemeMainColor);
+}

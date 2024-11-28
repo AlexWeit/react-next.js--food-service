@@ -36,3 +36,13 @@
     box-shadow: none;
     cursor: pointer;
 }
+
+.light {
+    background-color: var(--lightThemeMainColor);
+    border: 1px solid var(--lightThemeMainColor);
+}
+
+.dark {
+    background-color: var(--darkThemeMainColor);
+    border: 1px solid var(--darkThemeMainColor);
+}

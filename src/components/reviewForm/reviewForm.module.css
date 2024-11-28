@@ -68,3 +68,13 @@
     border-color: var(--yellow-light);
     opacity: .8;
 }
+
+.reviewFormButton.light {
+    color: var(--lightThemeMainColor);
+    border: 1px solid var(--lightThemeMainColor);
+}
+
+.reviewFormButton.dark {
+    color: var(--darkThemeMainColor);
+    border: 1px solid var(--darkThemeMainColor);
+}

@@ -16,3 +16,11 @@
     font-weight: 600;
     color: var(--yellow);
 }
+
+.light {
+    color: var(--lightThemeMainColor);
+}
+
+.dark {
+    color: var(--darkThemeMainColor);
+}
