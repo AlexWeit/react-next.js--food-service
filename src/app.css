@@ -1,5 +1,7 @@
 /*basic reset styles and variables*/
 :root {
+    --darkThemeMainColor: #234ec2;
+    --lightThemeMainColor: #f0ad4e;
     --black: #1d1d1d;
     --white: #ffffff;
     --orange: #e4661e;
