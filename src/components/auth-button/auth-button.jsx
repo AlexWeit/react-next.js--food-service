@@ -1,5 +1,6 @@
 import { useAuth } from "../auth-context/use-auth";
 import styles from "./auth-button.module.css";
+import {Button} from "../button/button";
 
 export const AuthButton = () => {
     const { name, setName, isAuth } = useAuth();
@@ -15,10 +16,9 @@ export const AuthButton = () => {
     };
 
     return (
-        <button
-            className={styles.authButton}
-            onClick={loginLogout}>
-            {text}
-        </button>
+        <Button
+            type="button"
+            extraClass={styles.authButton}
+            onClick={loginLogout}>{text}</Button>
     )
 };
