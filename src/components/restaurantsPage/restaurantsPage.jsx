@@ -1,15 +1,18 @@
-import { restaurantsData } from "../../mock-data/restaurants";
 import { TabsNav } from "../tabsNav/tabsNav";
-import { TabButton } from "../tabButton/tabButton";
-import { Restaurant } from "../restaurant/restaurant";
+import { RestaurantTabButtonContainer } from "../restaurant-tabButton/restaurant-tabButton-container";
+import { RestaurantContainer } from "../restaurant/restaurant-container";
 import { Container } from "../container/container";
-import {useState} from "react";
+import { useState } from "react";
 import styles from "./restaurants.module.css";
+import {useSelector} from "react-redux";
+import { selectRestaurantsIds } from "../../redux/entities/restaurants/restaurants-slice";
 
 export const RestaurantsPage = () => {
-    const [activeRestaurantId, setActiveRestaurantId] = useState(restaurantsData[0].id);
+    const restaurantsIds = useSelector(selectRestaurantsIds);
 
-    const activeRestaurant = restaurantsData.find(({ id }) => id === activeRestaurantId);
+    const [activeRestaurantId, setActiveRestaurantId] = useState(
+        restaurantsIds[0].id
+    );
 
     const handleSetActiveRestaurantId = (id) => {
         if (activeRestaurantId === id) {
@@ -34,12 +37,12 @@ export const RestaurantsPage = () => {
                 <div className={styles.restaurantsTabsHeader}>
                     <Container>
                         <TabsNav>
-                            {restaurantsData.map((restaurant) => (
-                                <TabButton
-                                    title={restaurant.name}
-                                    key={restaurant.id}
-                                    onClick={() => handleSetActiveRestaurantId(restaurant.id)}
-                                    isActive={restaurant.id === activeRestaurantId}
+                            {restaurantsIds.map((id) => (
+                                <RestaurantTabButtonContainer
+                                    key={id}
+                                    id={id}
+                                    onClick={() => handleSetActiveRestaurantId(id)}
+                                    isActive={id === activeRestaurantId}
                                 />
                             ))}
                         </TabsNav>
@@ -48,8 +51,11 @@ export const RestaurantsPage = () => {
 
                 <div className={styles.restaurantsTabsContent}>
                     <Container>
-                        {activeRestaurant && (
-                            <Restaurant restaurant={activeRestaurant}/>
+                        {activeRestaurantId && (
+                            <RestaurantContainer
+                                id={activeRestaurantId}
+                                key={activeRestaurantId}
+                            />
                         )}
                     </Container>
                 </div>
