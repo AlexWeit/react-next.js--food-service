@@ -4,7 +4,7 @@ import classNames from "classnames";
 import { useTheme } from "../theme-context/use-theme";
 import { useAuth } from "../auth-context/use-auth";
 
-export const MenuItem = ({ name, price, ingredients }) => {
+export const MenuItem = ({ name, price, ingredients, id }) => {
     const { theme } = useTheme();
 
     const { isAuth } = useAuth();
@@ -20,7 +20,7 @@ export const MenuItem = ({ name, price, ingredients }) => {
                 })}>{`${price}$`}</div>
             </div>
             <div className={styles.menuItemRight}>
-                {isAuth && <DishCounter />}
+                {isAuth && <DishCounter id={id} />}
             </div>
         </>
     );
