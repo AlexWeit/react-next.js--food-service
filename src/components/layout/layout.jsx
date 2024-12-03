@@ -4,7 +4,7 @@ import {Footer} from "../footer/footer";
 
 export const Layout = ({ children }) => {
     return (
-        <div>
+        <div className="mainWrapper">
             <ScrollProgressBar />
             <Header />
             {children}
