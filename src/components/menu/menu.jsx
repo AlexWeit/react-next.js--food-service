@@ -1,4 +1,4 @@
-import {MenuItem} from "../menuItem/menuItem";
+import {MenuItemContainer} from "../menuItem/menuItem-container";
 import styles from "./menu.module.css";
 
 export const Menu = ({ menuItems }) => {
@@ -6,9 +6,9 @@ export const Menu = ({ menuItems }) => {
         <div className={styles.menuWrap}>
             <h3 className={styles.menuTitle}>Menu</h3>
             <ul className={styles.menuList}>
-                {menuItems.map((menuItem) => (
-                    <li className={styles.menuItem} key = {menuItem.id}>
-                        <MenuItem menuItem={menuItem}/>
+                {menuItems.map((menuItemId) => (
+                    <li className={styles.menuItem} key={menuItemId}>
+                        <MenuItemContainer id={menuItemId}/>
                     </li>
                 ))}
             </ul>

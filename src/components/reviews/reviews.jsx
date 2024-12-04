@@ -1,4 +1,4 @@
-import {ReviewItem} from "../reviewItem/reviewItem";
+import {ReviewItemContainer} from "../reviewItem/reviewItem-container";
 import styles from "./reviews.module.css";
 
 export const Reviews = ({ reviewItems }) => {
@@ -6,9 +6,9 @@ export const Reviews = ({ reviewItems }) => {
         <div className={styles.reviewsWrap}>
             <h3 className={styles.reviewsTitle}>Reviews</h3>
             <ul className={styles.reviewsList}>
-                {reviewItems.map((reviewItem) => (
-                    <li className={styles.reviewsItem} key={reviewItem.id}>
-                        <ReviewItem reviewItem={reviewItem}/>
+                {reviewItems.map((reviewItemId) => (
+                    <li className={styles.reviewsItem} key={reviewItemId}>
+                        <ReviewItemContainer id={reviewItemId}/>
                     </li>
                 ))}
             </ul>

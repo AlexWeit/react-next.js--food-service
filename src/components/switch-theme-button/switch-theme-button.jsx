@@ -1,6 +1,6 @@
 import { useTheme } from "../theme-context/use-theme";
+import { Button } from "../button/button";
 import styles from "./switch-theme-button.module.css";
-import classNames from "classnames";
 
 export const SwitchThemeButton = () => {
     const { theme, setTheme } = useTheme();
@@ -14,13 +14,9 @@ export const SwitchThemeButton = () => {
     };
 
     return (
-        <button
-            className={classNames(styles.switchButton, {
-                [styles.light]: theme === "light",
-                [styles.dark]: theme === "dark",
-            })}
-            onClick={toggleTheme}>
-            Toggle Theme
-        </button>
+        <Button
+            type="button"
+            extraClass={styles.switchButton}
+            onClick={toggleTheme}>Toggle Theme</Button>
     )
 };

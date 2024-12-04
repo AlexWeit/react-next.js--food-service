@@ -47,34 +47,11 @@
 }
 
 .reviewFormButton {
-    height: 40px;
-    border: 1px solid var(--yellow);
-    border-radius: 4px;
-    font-size: 14px;
-    line-height: 28px;
-    font-weight: 700;
-    text-align: center;
-    color: var(--yellow);
-    text-transform: uppercase;
-    background-color: transparent;
-    padding-left: 20px;
-    padding-right: 20px;
     margin-top: 25px;
-    transition: all .2s;
-    cursor: pointer;
+    font-weight: 700;
+    text-transform: uppercase;
 }
 
 .reviewFormButton:hover {
-    border-color: var(--yellow-light);
     opacity: .8;
-}
-
-.reviewFormButton.light {
-    color: var(--lightThemeMainColor);
-    border: 1px solid var(--lightThemeMainColor);
-}
-
-.reviewFormButton.dark {
-    color: var(--darkThemeMainColor);
-    border: 1px solid var(--darkThemeMainColor);
 }
