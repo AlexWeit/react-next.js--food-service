@@ -1,0 +1,23 @@
+.cartTitle {
+    font-size: 22px;
+    line-height: 28px;
+    font-weight: 600;
+}
+
+.cartList {
+    max-width: 400px;
+    margin-top: 15px;
+    border: 1px solid var(--grey);
+    padding: 20px 26px;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.cartItem {
+    border: 1px solid var(--grey);
+    padding: 5px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
