@@ -2,6 +2,7 @@ import {useParams} from "react-router-dom";
 import {useSelector} from "react-redux";
 import {MenuItem} from "../../menuItem/menuItem";
 import {selectDishById} from "../../../redux/entities/dishes/dishes-slice";
+import {Container} from "../../container/container";
 
 export const DishPage = () => {
 
@@ -13,11 +14,13 @@ export const DishPage = () => {
 
     return (
         <main>
-            <MenuItem name={name}
-                      price={price}
-                      ingredients={ingredients}
-                      id={dishId}
-            />
+            <Container>
+                <MenuItem name={name}
+                          price={price}
+                          ingredients={ingredients}
+                          id={dishId}
+                />
+            </Container>
         </main>
     )
 };

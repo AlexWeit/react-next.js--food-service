@@ -1,6 +1,6 @@
 import {useSelector} from "react-redux";
 import {selectRestaurantById} from "../../redux/entities/restaurants/restaurants-slice";
-import { RestaurantTab } from "../restaurant-tab/restaurant-tab";
+import {TabNavLink} from "../tab-navLink/tab-navLink";
 
 export const RestaurantTabContainer = (({ id }) => {
     const restaurant = useSelector((state) => selectRestaurantById(state, id));
@@ -10,6 +10,6 @@ export const RestaurantTabContainer = (({ id }) => {
     }
 
     return (
-        <RestaurantTab title={restaurant.name} id={id} />
+        <TabNavLink path={`restaurant/${id}`} title={restaurant.name} />
     )
 });

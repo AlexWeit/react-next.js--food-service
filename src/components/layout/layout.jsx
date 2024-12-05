@@ -3,15 +3,16 @@ import {Header} from "../header/header";
 import {Footer} from "../footer/footer";
 import {Cart} from "../cart/cart";
 import {useAuth} from "../auth-context/use-auth";
+import { Outlet } from "react-router-dom";
 
-export const Layout = ({ children }) => {
+export const Layout = () => {
     const { isAuth } = useAuth();
 
     return (
         <div className="mainWrapper">
             <ScrollProgressBar />
             <Header />
-            {children}
+            <Outlet />
             {isAuth && <Cart />}
             <Footer />
         </div>

@@ -11,9 +11,12 @@ export const MenuItem = ({ name, price, ingredients, id }) => {
     const { isAuth } = useAuth();
 
     return (
-        <NavLink to={`/dish/${id}`} className={styles.menuItemLink}>
+        <div className={styles.menuItemLink}>
             <div className={styles.menuItemLeft}>
-                <h4 className={styles.menuItemName}>{name}</h4>
+                <NavLink to={`/dish/${id}`}>
+                    <h4 className={styles.menuItemName}>{name}</h4>
+                </NavLink>
+
                 <p className={styles.menuItemIngredients}>{ingredients.join(", ")}</p>
                 <div className={classNames(styles.menuItemPrice, {
                     [styles.light]: theme === "light",
@@ -23,6 +26,6 @@ export const MenuItem = ({ name, price, ingredients, id }) => {
             <div className={styles.menuItemRight}>
                 {isAuth && <DishCounter id={id} />}
             </div>
-        </NavLink>
+        </div>
     );
 };
