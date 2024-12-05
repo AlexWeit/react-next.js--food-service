@@ -1,8 +1,8 @@
 import {useSelector} from "react-redux";
 import {selectRestaurantById} from "../../redux/entities/restaurants/restaurants-slice";
-import { TabButton } from "../tabButton/tabButton";
+import { RestaurantTab } from "../restaurant-tab/restaurant-tab";
 
-export const RestaurantTabButtonContainer = (({ id, onClick, isActive }) => {
+export const RestaurantTabContainer = (({ id }) => {
     const restaurant = useSelector((state) => selectRestaurantById(state, id));
 
     if (!restaurant) {
@@ -10,6 +10,6 @@ export const RestaurantTabButtonContainer = (({ id, onClick, isActive }) => {
     }
 
     return (
-        <TabButton title={restaurant.name} onClick={onClick} isActive={isActive} />
+        <RestaurantTab title={restaurant.name} id={id} />
     )
 });

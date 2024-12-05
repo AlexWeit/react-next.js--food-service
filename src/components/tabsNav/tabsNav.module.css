@@ -1,3 +1,8 @@
+.tabsNavWrap {
+    padding: 0 24px;
+    background-color: var(--grey);
+}
+
 .tabsNav {
     overflow-x: auto;
     overflow-y: hidden;

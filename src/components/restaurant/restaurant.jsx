@@ -1,26 +1,30 @@
-import { Menu } from "../menu/menu";
-import { Reviews } from "../reviews/reviews";
-import { ReviewForm } from "../reviewForm/reviewForm";
-import { useAuth } from "../auth-context/use-auth";
 import styles from "./restaurant.module.css";
+import {TabsNav} from "../tabsNav/tabsNav";
+import {TabNavLink} from "../tab-navLink/tab-navLink";
+import {Container} from "../container/container";
+import { Outlet } from "react-router-dom";
 
-export const Restaurant = ({ name, menu, reviews }) => {
+export const Restaurant = ({ name }) => {
 
     if (!name) {
         return null;
     }
 
-    const { isAuth } = useAuth();
-
     return (
         <div className={styles.restaurantWrap}>
             <h2 className={styles.restaurantTitle}>{name}</h2>
 
-            {Boolean(menu.length) && <Menu menuItems={menu} />}
+            <TabsNav>
+                <TabNavLink path="menu" title="Menu" />
+                <TabNavLink path="reviews" title="Reviews" />
+            </TabsNav>
 
-            {Boolean(reviews.length) && <Reviews reviewItems={reviews} />}
+            <Container>
 
-            {isAuth && <ReviewForm />}
+                <Outlet />
+
+            </Container>
+
         </div>
     );
 };

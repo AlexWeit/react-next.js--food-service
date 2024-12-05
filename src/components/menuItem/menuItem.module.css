@@ -1,3 +1,9 @@
+.menuItemLink {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+}
+
 .menuItemName {
     font-size: 18px;
     line-height: 28px;
