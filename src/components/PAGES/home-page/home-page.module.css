@@ -1,0 +1,25 @@
+.wrap {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.content {
+    text-align: center;
+    font-size: 28px;
+}
+
+.link {
+    display: block;
+    padding-top: 15px;
+    color: var(--lightThemeMainColor);
+    font-weight: 600;
+}
+
+.link.light {
+    color: var(--lightThemeMainColor);
+}
+
+.link.dark {
+    color: var(--darkThemeMainColor);
+}

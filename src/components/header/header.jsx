@@ -10,7 +10,7 @@ export const Header = () => {
                 <Container>
                     <div className={styles.headerWrap}>
                         <SwitchThemeButton />
-                        <a href="#" className={styles.headerLogo}>Food delivery App</a>
+                        <a href="/" className={styles.headerLogo}>Food delivery App</a>
                         <AuthButton />
                     </div>
                 </Container>

@@ -3,16 +3,20 @@ import styles from "./menuItem.module.css";
 import classNames from "classnames";
 import { useTheme } from "../theme-context/use-theme";
 import { useAuth } from "../auth-context/use-auth";
+import { NavLink } from "react-router-dom";
 
-export const MenuItem = ({ name, price, ingredients }) => {
+export const MenuItem = ({ name, price, ingredients, id }) => {
     const { theme } = useTheme();
 
     const { isAuth } = useAuth();
 
     return (
-        <>
+        <div className={styles.menuItemLink}>
             <div className={styles.menuItemLeft}>
-                <h4 className={styles.menuItemName}>{name}</h4>
+                <NavLink to={`/dish/${id}`}>
+                    <h4 className={styles.menuItemName}>{name}</h4>
+                </NavLink>
+
                 <p className={styles.menuItemIngredients}>{ingredients.join(", ")}</p>
                 <div className={classNames(styles.menuItemPrice, {
                     [styles.light]: theme === "light",
@@ -20,8 +24,8 @@ export const MenuItem = ({ name, price, ingredients }) => {
                 })}>{`${price}$`}</div>
             </div>
             <div className={styles.menuItemRight}>
-                {isAuth && <DishCounter />}
+                {isAuth && <DishCounter id={id} />}
             </div>
-        </>
+        </div>
     );
 };
