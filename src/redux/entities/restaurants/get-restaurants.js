@@ -1,5 +1,5 @@
 import { createAsyncThunk } from "@reduxjs/toolkit";
-// import { selectRestaurantsIds } from "./restaurants-slice";
+import { selectRestaurantsIds } from "./restaurants-slice";
 
 // creating middleware for asking data from server
 export const getRestaurants = createAsyncThunk(
@@ -16,9 +16,10 @@ export const getRestaurants = createAsyncThunk(
 
         return result;
     },
-    // {
-    //     condition: (_, { getState }) => {
-    //         return selectRestaurantsIds(getState()).length === 0;
-    //     },
-    // }
+    {
+        condition: (_, { getState }) => {
+            //if no restaurants
+            return selectRestaurantsIds(getState()).length === 0;
+        },
+    }
 );
