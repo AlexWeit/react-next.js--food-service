@@ -1,5 +1,6 @@
 import { createSlice, createEntityAdapter } from "@reduxjs/toolkit";
 import {getRestaurants} from "./get-restaurants";
+import {getRestaurantById} from "./get-restaurant-by-id";
 
 const entityAdapter = createEntityAdapter();
 
@@ -12,8 +13,12 @@ export const restaurantsSlice = createSlice({
         selectRestaurantsRequestStatus: (state) => state.requestStatus,
     },
     extraReducers: (builder) =>
-        builder.addCase(getRestaurants.fulfilled, (state, { payload }) => {
+        builder
+            .addCase(getRestaurants.fulfilled, (state, { payload }) => {
                 entityAdapter.setMany(state, payload); // get all restaurants
+            })
+            .addCase(getRestaurantById.fulfilled, (state, { payload }) => {
+                entityAdapter.setOne(state, payload);
             }),
 });
 
