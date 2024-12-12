@@ -5,7 +5,7 @@ import { useDispatch, useSelector } from "react-redux";
 import { addToCart,
     removeFromCart,
     selectCartItemAmountById,
-} from "../../redux/ui/cart-slice";
+} from "../../redux/ui/cart/cart-slice";
 
 export const DishCounter = ({ id }) => {
 

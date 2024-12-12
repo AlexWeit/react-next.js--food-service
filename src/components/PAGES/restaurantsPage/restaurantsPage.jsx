@@ -1,12 +1,9 @@
 import { TabsNav } from "../../tabsNav/tabsNav";
-import { RestaurantTabContainer } from "../../restaurant-tab/restaurant-tab-container";
+import { RestaurantsTabsContainer } from "../../restaurants-tabs/restaurants-tabs-container";
 import styles from "./restaurants.module.css";
-import {useSelector} from "react-redux";
-import { selectRestaurantsIds } from "../../../redux/entities/restaurants/restaurants-slice";
 import { Outlet } from "react-router-dom";
 
 export const RestaurantsPage = () => {
-    const restaurantsIds = useSelector(selectRestaurantsIds);
 
     return (
         <main>
@@ -21,12 +18,7 @@ export const RestaurantsPage = () => {
 
             <div className={styles.restaurantsTabs}>
                 <TabsNav>
-                    {restaurantsIds.map((id) => (
-                        <RestaurantTabContainer
-                            key={id}
-                            id={id}
-                        />
-                    ))}
+                    <RestaurantsTabsContainer />
                 </TabsNav>
 
                 <div className={styles.restaurantsTabsContent}>
