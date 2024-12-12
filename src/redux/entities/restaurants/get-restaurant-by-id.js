@@ -19,8 +19,8 @@ export const getRestaurantById = createAsyncThunk(
     },
     {
         condition: (id, { getState }) => {
-            //if no restaurants
-            return selectRestaurantById(getState(), id).length === 0;
+            //if no restaurant
+            return selectRestaurantById(getState(), id) === undefined;
         },
     }
 );
