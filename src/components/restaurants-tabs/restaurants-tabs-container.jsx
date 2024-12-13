@@ -1,28 +1,23 @@
-import {useSelector} from "react-redux";
-import {selectRestaurantsIds} from "../../redux/entities/restaurants/restaurants-slice";
 import {RestaurantsTabs} from "../restaurants-tabs/restaurants-tabs";
-import {getRestaurants} from "../../redux/entities/restaurants/get-restaurants";
-import {useRequest} from "../../redux/hooks/use-request";
+import {useGetRestaurantsQuery} from "../../redux/services/api/index";
 
 export const RestaurantsTabsContainer = () => {
 
-    const restaurantsIds = useSelector(selectRestaurantsIds);
+    const { data, isLoading, isError } = useGetRestaurantsQuery();
 
-    const requestStatus = useRequest(getRestaurants);
-
-    if (requestStatus === "pending") {
+    if (isLoading) {
         return "loading ...";
     }
 
-    if (requestStatus === "rejected") {
+    if (isError) {
         return "error";
     }
 
-    if (!restaurantsIds.length) {
+    if (!data.length) {
         return null;
     }
 
     return (
-        <RestaurantsTabs restaurantsIds={restaurantsIds} />
+        <RestaurantsTabs restaurants={data} />
     )
 };

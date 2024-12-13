@@ -1,14 +1,14 @@
-import {MenuItemContainer} from "../menuItem/menuItem-container";
 import styles from "./menu.module.css";
+import {MenuItem} from "../menuItem/menuItem";
 
 export const Menu = ({ menuItems }) => {
     return (
         <div className={styles.menuWrap}>
             <h3 className={styles.menuTitle}>Menu</h3>
             <ul className={styles.menuList}>
-                {menuItems.map((menuItemId) => (
-                    <li className={styles.menuItem} key={menuItemId}>
-                        <MenuItemContainer id={menuItemId}/>
+                {menuItems.map(({id, name, price, ingredients}) => (
+                    <li className={styles.menuItem} key={id}>
+                        <MenuItem name={name} price={price} ingredients={ingredients} id={id} />
                     </li>
                 ))}
             </ul>

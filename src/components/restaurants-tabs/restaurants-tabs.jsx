@@ -1,12 +1,13 @@
-import { RestaurantTabContainer } from "../restaurant-tab/restaurant-tab-container";
+import {TabNavLink} from "../tab-navLink/tab-navLink";
 
-export const RestaurantsTabs = ({ restaurantsIds }) => {
+export const RestaurantsTabs = ({ restaurants }) => {
     return (
         <>
-            {restaurantsIds.map((id) => (
-                <RestaurantTabContainer
+            {restaurants.map(({ name, id }) => (
+                <TabNavLink
+                    path={`restaurant/${id}`}
+                    title={name}
                     key={id}
-                    id={id}
                 />
             ))}
         </>
