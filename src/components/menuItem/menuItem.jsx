@@ -1,9 +1,11 @@
+"use client";
+
 import {DishCounter} from "../dish-counter/dish-counter";
 import styles from "./menuItem.module.css";
 import classNames from "classnames";
 import { useTheme } from "../theme-context/use-theme";
 import { useAuth } from "../auth-context/use-auth";
-import { NavLink } from "react-router-dom";
+import Link from "next/link";
 
 export const MenuItem = ({ name, price, ingredients, id }) => {
     const { theme } = useTheme();
@@ -13,9 +15,9 @@ export const MenuItem = ({ name, price, ingredients, id }) => {
     return (
         <div className={styles.menuItemLink}>
             <div className={styles.menuItemLeft}>
-                <NavLink to={`/dish/${id}`}>
+                <Link href={`/dish/${id}`}>
                     <h4 className={styles.menuItemName}>{name}</h4>
-                </NavLink>
+                </Link>
 
                 <p className={styles.menuItemIngredients}>{ingredients.join(", ")}</p>
                 <div className={classNames(styles.menuItemPrice, {

@@ -1,4 +1,6 @@
-import { Link } from "react-router-dom";
+"use client";
+
+import Link from "next/link";
 import {Container} from "../../container/container";
 import styles from "./home-page.module.css";
 import classNames from "classnames";
@@ -13,7 +15,7 @@ export const HomePage = () => {
                 <div className={styles.content}>
                     <p>Welcome to our food delivery App. </p>
                     <p>Choose restaurant and order your favorite dishes.</p>
-                    <Link to='/restaurants'
+                    <Link href='/restaurants'
                           className={classNames(styles.link, {
                               [styles.light]: theme === "light",
                               [styles.dark]: theme === "dark",

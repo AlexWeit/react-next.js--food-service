@@ -5,7 +5,7 @@ export const RestaurantsTabs = ({ restaurants }) => {
         <>
             {restaurants.map(({ name, id }) => (
                 <TabNavLink
-                    path={`restaurant/${id}`}
+                    path={`restaurants/${id}`}
                     title={name}
                     key={id}
                 />

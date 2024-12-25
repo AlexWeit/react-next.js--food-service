@@ -1,17 +1,22 @@
+"use client";
+
 import classNames from "classnames";
-import { NavLink } from "react-router-dom";
+import Link from "next/link";
+import { usePathname } from "next/navigation";
 
 import styles from "./tab-navLink.module.css";
 
 export const TabNavLink = ({ path, title }) => {
+    const pathname = usePathname();
+
     return (
-        <NavLink
-            to={path}
-            className={({ isActive }) =>
-                classNames(styles.link, isActive && styles.activeLink)
-            }
+        <Link
+            href={path}
+            className={classNames(styles.link, {
+                [styles.activeLink]: path === pathname,
+            })}
         >
             {title}
-        </NavLink>
+        </Link>
     );
 };

@@ -29,6 +29,9 @@ export const apiSlice = createApi({
             }),
             invalidatesTags: ({ restaurantId }) => [{ type: "Reviews", restaurantId }],
         }),
+        getDishById: builder.query({
+            query: (dishId) => `/dish/${dishId}`,
+        }),
     }),
 });
 
@@ -39,5 +42,6 @@ export const {
     useGetUsersQuery,
     useGetReviewsByRestaurantIdQuery,
     useAddReviewMutation,
+    useGetDishByIdQuery,
 
 } = apiSlice;
