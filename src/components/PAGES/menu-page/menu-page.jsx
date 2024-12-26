@@ -1,28 +1,10 @@
-import {useParams} from "react-router-dom";
-import {Menu} from "../../menu/menu";
-import {useGetMenuByRestaurantIdQuery} from "../../../redux/services/api/index";
+import { MenuContainer } from "../../menu/menu-container";
 
-export const MenuPage = () => {
+export const MenuPage = async ({ params }) => {
 
-    const { restaurantId } = useParams();
-
-    const { data, isLoading, isError } = useGetMenuByRestaurantIdQuery(restaurantId);
-
-    if (isLoading) {
-        return "loading ...";
-    }
-
-    if (isError) {
-        return "error";
-    }
-
-    if (!data.length) {
-        return null;
-    }
+    const { restaurantId } = await params;
 
     return (
-        <>
-            {Boolean(data.length) && <Menu menuItems={data} />}
-        </>
+        <MenuContainer restaurantId={restaurantId} />
     )
 };

@@ -1,10 +1,19 @@
-import {useParams} from "react-router-dom";
 import { RestaurantContainer } from "../../restaurant/restaurant-container";
+import {Container} from "../../container/container";
 
-export const RestaurantPage = () => {
-    const { restaurantId } = useParams();
+export const RestaurantPage = async ({ params, children }) => {
+    const { restaurantId } = await params;
 
     return (
-        <RestaurantContainer id={restaurantId}/>
+        <>
+
+            <RestaurantContainer id={restaurantId}/>
+            <Container>
+
+                { children }
+
+            </Container>
+        </>
+
     )
 };

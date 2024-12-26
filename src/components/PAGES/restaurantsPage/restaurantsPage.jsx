@@ -1,9 +1,8 @@
 import { TabsNav } from "../../tabsNav/tabsNav";
 import { RestaurantsTabsContainer } from "../../restaurants-tabs/restaurants-tabs-container";
 import styles from "./restaurants.module.css";
-import { Outlet } from "react-router-dom";
 
-export const RestaurantsPage = () => {
+export const RestaurantsPage = ({ children }) => {
 
     return (
         <main>
@@ -23,7 +22,7 @@ export const RestaurantsPage = () => {
 
                 <div className={styles.restaurantsTabsContent}>
 
-                    <Outlet />
+                    { children }
 
                 </div>
             </div>

@@ -1,3 +1,5 @@
+"use client";
+
 import {RestaurantsTabs} from "../restaurants-tabs/restaurants-tabs";
 import {useGetRestaurantsQuery} from "../../redux/services/api/index";
 
